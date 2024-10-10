@@ -10,6 +10,17 @@
                             </a></h5>
                     </div>
                 </div>
+            <div>
+                <form action="{{route('post.destroy', $post->id)}}" method="post">
+                    @csrf
+                    @method("delete")
+                    <button>X</button>
+                </form>
+                <a href="{{route('post.show', $post->id)}}">Zobraziť
+
+                </a>
+                <a href="{{route('post.edit', $post->id)}}">Edit</a>
+          </div>
             </div>
         </div>
         <div class="card-body">
@@ -28,7 +39,7 @@
             </div>
             <div>
                 <div class="mb-3">
-                    <textarea class="fs-6 form-control" rows="1"></textarea>
+                    <textarea class="fs-6 form-control" rows="1">{{}}</textarea>
                 </div>
                 <div>
                     <button class="btn btn-primary btn-sm"> Post Comment </button>

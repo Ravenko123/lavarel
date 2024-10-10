@@ -59,9 +59,7 @@
             </form>
         </div>
         <hr>
-        @foreach($posts as $post)
             @include('._template.post-card')
-        @endforeach
     </div>
     <div class="col-3">
         <div class="card">

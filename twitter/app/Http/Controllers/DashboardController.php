@@ -9,12 +9,6 @@ class DashboardController extends Controller
 { 
     public function index () {
 
-        Post::create([
-            'content' => "test123" , 
-            'likes'=> 15,
-        ]);
-
-        $posts->save();
         $users = [
             [
                 "name" => "Mario"
