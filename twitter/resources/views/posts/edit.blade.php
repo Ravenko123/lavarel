@@ -45,16 +45,17 @@
         @endif
         <h4> Share yours ideas </h4>
         <div class="row">
-            <form action="{{ route('post.create')}}" method="POST">
+            <form action="{{ route('post.update', $post->id)}}" method="POST">
                 @csrf
+                @method('put')
             <div class="mb-3">
-                <textarea class="form-control" id="idea" rows="3" name="content"></textarea>
-                @error('content')
+                <textarea class="form-control" id="idea" rows="3" name="content">{{$post->content}}</textarea>
+                @error("update")
                 <span>{{$message}}</span>
                 @enderror
             </div>
             <div class="">
-                <button class="btn btn-dark"> Share </button>
+                <button class="btn btn-dark"> Update </button>
             </div>
             </form>
         </div>

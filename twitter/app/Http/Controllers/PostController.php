@@ -43,4 +43,16 @@ class PostController extends Controller
             ]
        );       
      }
+     public function update(Post $post){
+
+        request()->validate([
+            'content' => 'required|min:10|max:255'
+        ]);
+        $post->update([
+            'content'=> request()->get('content', ''),
+        ]);
+
+        return redirect()->route('dashboard.index')->with('success', 'prispevok bol uspesne aktualizovany');
+
+     }
 }
